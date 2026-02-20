@@ -170,37 +170,18 @@
           >
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            v-for="(category, name) in checklist.prochain"
-            :key="name"
-            class="glass p-8 rounded-2xl border-dashed border-white/20"
-          >
-            <h3
-              class="
-                text-xl
-                font-syne font-bold
-                mb-6
-                text-gray-400
-                uppercase
-                tracking-wider
-              "
-            >
-              {{ name }}
-            </h3>
-            <ul class="space-y-4">
-              <li
-                v-for="item in category"
-                :key="item"
-                class="flex gap-4 items-start text-sm opacity-60"
-              >
-                <span class="todo-icon mt-1">○</span>
-                <span class="text-gray-400 italic">{{ item }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.prochain" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
+                    <h3 class="text-xl font-syne font-bold mb-6 text-gray-400 uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm opacity-60">
+                            <span class="todo-icon mt-1">○</span>
+                            <span class="text-gray-400 italic">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
       <!-- Footer -->
       <footer
@@ -269,12 +250,13 @@
                   "Définition complète des rôles (PRESIDENT → STAGIAIRE)",
                   "Matrice de permissions par ressource critique",
                   "Niveaux de classification C0 à C3 implémentés",
-                  "Gestion des secrets Kubernetes configurée",
+                  "Gestion des secrets configurée",
                 ],
                 "Gouvernance & Sécurité": [
                   "Interception obligatoire par Authority",
                   "Protocole Evidence First (Fact-Checking)",
                   "Cloisonnement des connaissances client",
+                  "Rotation automatisée des secrets (90j)",
                   "Supervision croisée (Compliance / Fact-Checking)",
                 ],
               },
@@ -290,17 +272,11 @@
                   "Filtrage auto des PII dans les réponses",
                   "Audit périodique des périmètres d'accès",
                 ],
-                "Performance & DevSecOps": [
-                  "Monitoring des dérives comportementales",
-                  "Pénétration tests agentiques réguliers",
-                  "Rotation automatisée des secrets (90j)",
-                  "Sandboxing dans des conteneurs éphémères",
-                ],
               },
             },
           };
         },
       }).mount("#app");
     </script>
-  </body>
+</body>
 </html>
