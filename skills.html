@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills OpenClaw | Investec Advisory</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --claw-red: #ff3e3e;
+      --claw-violet: #9d4edd;
+      --claw-orange: #ff9100;
+      --claw-yellow: #ffcc00;
+      --claw-noir: #000000;
+      --text: #e0e0e0;
+      --card-bg: rgba(255, 255, 255, 0.03);
+    }
+
+    body {
+      background-color: var(--claw-noir);
+      background: radial-gradient(circle at top right, #1a0b2e 0%, var(--claw-noir) 100%);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    .font-syne { font-family: 'Syne', sans-serif; }
+
+    .glass {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .glass:hover {
+      border-color: var(--claw-red);
+      box-shadow: 0 0 30px rgba(157, 78, 221, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, var(--claw-red), var(--claw-orange), var(--claw-yellow), var(--claw-violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .scanline {
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 62, 62, 0.05);
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      pointer-events: none;
+      animation: scan 12s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+
+    .blob {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(157, 78, 221, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+    }
+
+    .stagger-in {
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-container img {
+      max-height: 80px;
+      width: auto;
+      filter: drop-shadow(0 0 10px rgba(255, 62, 62, 0.3));
+    }
+
+    .section-card { border-top: 3px solid var(--claw-orange); }
+
+    .flow-step {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 1px solid var(--claw-violet);
+      padding-bottom: 2rem;
+    }
+
+    .flow-step::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--claw-red);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--claw-red);
+    }
+
+    pre {
+      margin-top: .6rem;
+      overflow: auto;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(7, 12, 28, 0.9);
+      font-size: .82rem;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-12">
+  <div class="scanline"></div>
+  <div class="blob" style="top: -200px; right: -200px;"></div>
+  <div class="blob" style="bottom: -200px; left: -200px;"></div>
+
+  <div id="app" class="max-w-6xl mx-auto">
+    <header class="mb-20 stagger-in">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-1 bg-red-500"></div>
+        <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Skills Dashboard</span>
+      </div>
+
+      <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
+        INTELLIGENT CONNECTOR : <br />
+        <span class="gradient-text">Skills sur OpenClaw</span>
+      </h1>
+
+      <div class="logo-container mb-8">
+        <img src="favicon.svg" alt="OpenClaw Logo" />
+      </div>
+
+      <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+        Passerelles entre l'IA et vos systèmes métier. Nous transformons des sources de données disparates en un réseau de compétences structuré, interopérable et sécurisé.
+      </p>
+    </header>
+
+    <section class="mb-20 stagger-in" style="animation-delay:0.15s">
+      <h2 class="text-3xl font-syne font-800 mb-10 flex items-center gap-4 text-white">
+        <span class="text-orange-400">⚡</span> C’EST QUOI UN SKILL ?
+      </h2>
+      <div class="glass p-8 rounded-2xl section-card max-w-4xl">
+        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Un skill = une capacité spécialisée pour un agent IA</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Un skill sert à donner à un agent une compétence métier précise (ex: Google Workspace, recherche web, génération de documents, design frontend),
+          avec des règles d’usage claires. Concrètement, il permet d’automatiser des tâches utiles de manière plus fiable, plus rapide et plus cohérente,
+          tout en gardant un cadre de sécurité et de gouvernance.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-20 stagger-in" style="animation-delay:0.25s">
+      <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+        🛡️ RÉALISATIONS <span class="text-xs font-mono text-red-300 bg-red-400/10 px-2 py-1 rounded">DÉPLOYÉ</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div v-for="(items, name) in completed" :key="name" class="glass p-8 rounded-2xl relative overflow-hidden">
+          <h3 class="text-xl font-syne font-bold mb-6 text-purple-300 uppercase tracking-wider">{{ name }}</h3>
+          <ul class="space-y-4">
+            <li v-for="item in items" :key="item" class="flex gap-4 items-start text-sm">
+              <span class="text-red-400 mt-1">✓</span>
+              <span class="text-gray-300">{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-20 stagger-in" style="animation-delay:0.35s">
+      <h2 class="text-3xl font-syne font-800 mb-6 flex items-center gap-4 text-white">
+        <span class="text-red-400">📦</span> INSTALLER & ACTIVER UN SKILL
+      </h2>
+      <div class="glass p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div v-for="step in installWorkflow" :key="step.id" class="flow-step !pb-4">
+            <div class="text-[11px] text-orange-300 font-bold uppercase tracking-widest mb-1">{{ step.label }}</div>
+            <h4 class="text-white font-bold mb-1 text-sm">{{ step.title }}</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">{{ step.desc }}</p>
+            <pre class="mt-2 p-2 text-[11px]"><code>{{ step.code }}</code></pre>
+          </div>
+        </div>
+        <div class="flex flex-col justify-start border-l border-white/5 pl-6">
+          <div class="bg-red-500/10 border border-red-400/30 p-4 rounded-2xl mb-4">
+            <h3 class="text-red-300 font-bold text-xs mb-2 uppercase tracking-tighter">Source officielle</h3>
+            <p class="text-gray-300 text-xs leading-relaxed">Catalogue skills : https://clawhub.ai</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-xs text-gray-400"><span class="text-yellow-300">⚡</span> Installation locale dans ~/.openclaw/workspace/skills</div>
+            <div class="flex items-center gap-2 text-xs text-gray-400"><span class="text-yellow-300">⚡</span> Activation manuelle ou dashboard Skills</div>
+            <div class="flex items-center gap-2 text-xs text-gray-400"><span class="text-yellow-300">⚡</span> Redémarrage Gateway pour prise en compte</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-20 stagger-in" style="animation-delay:0.45s">
+      <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+        🚀 PROCHAINES ÉTAPES <span class="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">BACKLOG</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div v-for="(items, name) in nextSteps" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
+          <h3 class="text-xl font-syne font-bold mb-6 text-gray-300 uppercase tracking-wider">{{ name }}</h3>
+          <ul class="space-y-4">
+            <li v-for="item in items" :key="item" class="flex gap-4 items-start text-sm opacity-70">
+              <span class="text-orange-300 mt-1">○</span>
+              <span class="text-gray-400 italic">{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:col-span-2 glass p-10 rounded-2xl stagger-in border-red-400/20 mb-20" style="animation-delay:0.55s">
+      <h2 class="text-3xl font-syne font-bold mb-10 text-center uppercase tracking-tight">VIGILANCE & POINTS CRITIQUES</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div v-for="point in vigilance" :key="point.title" class="text-center">
+          <div class="text-4xl mb-4">{{ point.icon }}</div>
+          <h4 class="text-red-300 font-bold mb-3 uppercase text-xs tracking-widest">{{ point.title }}</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">{{ point.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay:0.65s">
+      <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">Investec Advisory • Skills Governance Unit • 2026</div>
+      <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+        <span class="text-gray-500">Status: Operational</span>
+        <span class="text-gray-500">Scope: Multi-Agents</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          understanding: [
+            {
+              tag: 'Définition',
+              title: 'Un skill est un module de capacité métier',
+              problem: 'Sans skill, les agents restent généralistes et peu fiables sur les workflows spécifiques.',
+              solution: 'Le skill fournit un cadre d’exécution clair (outils, règles, procédures) pour des tâches ciblées.'
+            },
+            {
+              tag: 'Utilité',
+              title: 'Industrialiser les cas d’usage',
+              problem: 'Les opérations manuelles répétitives ralentissent les équipes et augmentent le risque d’erreur.',
+              solution: 'Les skills automatisent les actions à forte fréquence : recherche, synthèse, génération, conformité.'
+            },
+            {
+              tag: 'Problématique',
+              title: 'Réduire les risques opérationnels',
+              problem: 'Un skill mal gouverné peut exposer des credentials, surconsommer les APIs ou créer des conflits.',
+              solution: 'Gouvernance skills: provenance, permissions minimales, isolation des credentials, validation des updates.'
+            },
+            {
+              tag: 'Résultat',
+              title: 'Interopérabilité multi-agents',
+              problem: 'Des capacités non standardisées créent des ruptures de flux entre agents.',
+              solution: 'Le protocole MCP + registre skills unifient les interactions et facilitent audit et maintenance.'
+            }
+          ],
+          completed: {
+            'Sélection & Installation': [
+              'Inventaire des besoins par agent',
+              'Google Sheet de référence des skills',
+              'Guide d’installation pas-à-pas pour l’équipe'
+            ],
+            'Skills Déployés': [
+              'Gog (Google Workspace) sur agents Origination/Delivery',
+              'Realtime Web Search pour Media Intelligence / Fact-Checking',
+              'LinkedIn & Twitter pour veille et origination',
+              'Document Generation pour pitch/CIM/livrables',
+              'Stack complémentaire: Summarize, Ontology, Proactive Agent, Tavily, API Gateway, Nano Pdf, Notion, Compliance'
+            ],
+            'Architecture & Interopérabilité': [
+              'Standardisation via protocole MCP',
+              'Credentials OAuth isolés par skill',
+              'Environnements cloisonnés agent/skill',
+              'Anti-doublons Media Intelligence',
+              'Gestion des rate limits API Google'
+            ],
+            'Validation & Contrôle Qualité': [
+              'Tests fonctionnels de chaque skill',
+              'Évaluation de pertinence métier',
+              'Détection des conflits/doublons entre skills'
+            ]
+          },
+          installWorkflow: [
+            {
+              id: 1,
+              label: 'Source',
+              title: 'Choisir un skill sur ClawHub',
+              desc: 'Identifier un skill pertinent pour le cas d’usage métier.',
+              code: 'https://clawhub.ai'
+            },
+            {
+              id: 2,
+              label: 'Installation',
+              title: 'Installer localement le skill',
+              desc: 'La commande crée le dossier du skill dans le workspace.',
+              code: 'npx clawhub@latest install <nom-du-skill>\n# => ~/.openclaw/workspace/skills/<nom-du-skill>'
+            },
+            {
+              id: 3,
+              label: 'Configuration',
+              title: 'Activer manuellement dans openclaw.json',
+              desc: 'Activer le skill via la section skills.entries.',
+              code: '"skills": {\n  "entries": {\n    "<nom-du-skill>": {\n      "enabled": true\n    }\n  }\n}'
+            },
+            {
+              id: 4,
+              label: 'Dashboard',
+              title: 'Ou activer via Dashboard > Skills',
+              desc: 'Cliquer sur Enable pour le skill ciblé.',
+              code: 'Dashboard > Skills\nBouton « Enable »'
+            },
+            {
+              id: 5,
+              label: 'Runtime',
+              title: 'Redémarrer OpenClaw Gateway',
+              desc: 'Appliquer les changements de config.',
+              code: 'openclaw gateway stop\nopenclaw gateway start\n# ou: openclaw gateway restart'
+            }
+          ],
+          nextSteps: {
+            'Sécurité & Gouvernance des Skills': [
+              'Audit de provenance (auteur, réputation, source auditable)',
+              'Contrôle des permissions au moindre privilège',
+              'Isolation des skills par rôle métier',
+              'Politique de mise à jour validée en staging',
+              'Rotation des credentials tous les 90 jours'
+            ],
+            'Fiabilité & Maintenance Continue': [
+              'Monitoring actif (échec, latence, anomalies)',
+              'Tests de régression après chaque changement',
+              'Gestion explicite des dépendances pour éviter les effets cascade'
+            ],
+            'Optimisation & Veille': [
+              'Veille continue des nouveaux skills ClawHub',
+              'Décommissionnement propre des skills obsolètes'
+            ],
+            'Documentation & Traçabilité': [
+              'Registre skills à jour (version, agent, date, owner, statut)',
+              'Journalisation d’usage dans audit.log'
+            ]
+          },
+          vigilance: [
+            { icon: '🔐', title: 'Provenance non vérifiée', text: 'Risque d’intégrer un skill de source peu fiable ou insuffisamment audité.' },
+            { icon: '🧨', title: 'Permissions excessives', text: 'Un skill trop permissif augmente la surface d’attaque et le risque de fuite.' },
+            { icon: '🔁', title: 'Mise à jour non contrôlée', text: 'Une update directe en prod peut casser des workflows critiques.' },
+            { icon: '📉', title: 'Dégradation silencieuse', text: 'Sans monitoring, les anomalies de performance passent inaperçues.' },
+            { icon: '🧩', title: 'Effets cascade', text: 'Une dépendance externe défaillante peut impacter plusieurs agents.' },
+            { icon: '🧾', title: 'Traçabilité incomplète', text: 'Sans registre/logs, audit et remédiation deviennent difficiles.' }
+          ]
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

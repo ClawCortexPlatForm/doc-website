@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gouvernance OpenClaw | Investec Advisory</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #e0e0e0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            /* OpenClaw Palette */
+            --claw-red: #ff3e3e;
+            --claw-violet: #9d4edd;
+            --claw-orange: #ff9100;
+            --claw-yellow: #ffcc00;
+            --claw-noir: #000000;
+            --accent: var(--claw-violet);
+        }
+        body {
+            background-color: var(--claw-noir);
+            background: radial-gradient(circle at top right, #1a0b2e 0%, var(--claw-noir) 100%);
+            color: var(--text);
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+        }
+        .font-syne { font-family: 'Syne', sans-serif; }
+        
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass:hover {
+            border-color: var(--claw-red);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--claw-red), var(--claw-orange), var(--claw-yellow), var(--claw-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 62, 62, 0.05);
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            pointer-events: none;
+            animation: scan 12s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        .blob {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .stagger-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .check-icon {
+            color: var(--claw-red);
+            font-weight: bold;
+        }
+        
+        .todo-icon {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-done {
+            background: rgba(255, 62, 62, 0.1);
+            color: var(--claw-red);
+            border: 1px solid var(--claw-red);
+        }
+        
+        .logo-container img {
+            max-height: 80px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 62, 62, 0.3));
+        }
+        
+        .challenge-card {
+            border-top: 3px solid var(--claw-orange);
+        }
+
+        /* Workflow styles */
+        .flow-step {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 1px solid var(--claw-violet);
+            padding-bottom: 2rem;
+        }
+        .flow-step::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--claw-red);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--claw-red);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+    <div class="scanline"></div>
+    <div class="blob" style="top: -200px; right: -200px;"></div>
+    <div class="blob" style="bottom: -200px; left: -200px;"></div>
+
+    <div id="app" class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-20 stagger-in">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-claw-red"></div>
+                <span class="text-claw-violet uppercase tracking-widest text-sm font-bold">Investec Advisory Governance Dashboard</span>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
+                TRUSTED <br>
+                <span class="gradient-text">AUTONOMY : Gouvernance sur OpenClaw</span>
+            </h1>
+
+            <!-- Logo OpenClaw SVG (Réadapté) -->
+            <div class="logo-container mb-8">
+                <img src="favicon.svg" alt="OpenClaw Logo" class="stagger-in" style="animation-delay: 0.1s">
+            </div>
+
+            <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+                Protocoles de sécurité pour l'écosystème multi-agents. Nous transformons la puissance brute d'OpenClaw en un outil fiable et auditable.
+            </p>
+        </header>
+
+        
+
+        <!-- Section: Challenges & Governance Resolution -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.2s">
+            <h2 class="text-3xl font-syne font-800 mb-10 flex items-center gap-4 text-white">
+                <span class="text-claw-orange icon challenge">⚡</span> DÉFIS ENTREPRISE & RÉPONSES GOUVERNANCE
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="challenge in enterpriseChallenges" :key="challenge.id" class="glass p-8 rounded-2xl challenge-card">
+                    <div class="text-xs text-claw-orange font-bold mb-2 uppercase tracking-tighter">Problématique Entreprise</div>
+                    <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">{{ challenge.issue }}</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">{{ challenge.description }}</p>
+                    
+                    <div class="pt-6 border-t border-white/5">
+                        <div class="text-[10px] text-claw-violet font-bold mb-2 uppercase tracking-widest">Résolution par notre Gouvernance</div>
+                        <p class="text-gray-300 text-sm font-medium">{{ challenge.resolution }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Overview -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 stagger-in" style="animation-delay: 0.3s">
+            <div class="glass p-6 rounded-xl border-l-3 border-l-claw-red">
+                <div class="text-gray-500 text-xs uppercase mb-2">Statut Global</div>
+                <div class="text-2xl font-syne font-bold">SÉCURISÉ</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <div class="text-gray-500 text-xs uppercase mb-2">Mesures Actives</div>
+                <div class="text-2xl font-syne font-bold text-claw-violet">{{ doneItems.length }}</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <div class="text-gray-500 text-xs uppercase mb-2">En Attente</div>
+                <div class="text-2xl font-syne font-bold">{{ todoItems.length }}</div>
+            </div>
+            <!--
+            <div class="glass p-6 rounded-xl">
+                <div class="text-gray-500 text-xs uppercase mb-2">Niveau Confiance</div>
+                <div class="text-2xl font-syne font-bold text-claw-yellow">92%</div>
+            </div>
+            -->
+        </section>
+
+        <!-- Detailed Checklist (Done) -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.4s">
+            <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+                🛡️ RÉALISATIONS <span class="text-xs font-mono text-claw-red bg-claw-red/10 px-2 py-1 rounded">DÉPLOYÉ</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.realise" :key="name" class="glass p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-1 text-4xl">
+                        {{ getIcon(name) }}
+                    </div>
+                    <h3 class="text-xl font-syne font-bold mb-6 text-claw-violet uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm">
+                            <span class="check-icon mt-1">✓</span>
+                            <span class="text-gray-300">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Workflow des Requêtes -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.15s">
+            <h2 class="text-3xl font-syne font-800 mb-10 flex items-center gap-4 text-white">
+                <span class="text-claw-red">🔒</span> WORKFLOW DE SÉCURITÉ (CHAIN OF TRUST)
+            </h2>
+            <div class="glass p-10 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div v-for="step in requestWorkflow" :key="step.id" class="flow-step">
+                        <div class="text-xs text-claw-orange font-bold uppercase tracking-widest mb-1">{{ step.label }}</div>
+                        <h4 class="text-white font-bold mb-2">{{ step.title }}</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">{{ step.desc }}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center border-l border-white/5 pl-8">
+                    <div class="bg-claw-red/10 border border-claw-red/30 p-6 rounded-2xl mb-6">
+                        <h3 class="text-claw-red font-bold text-sm mb-3 uppercase tracking-tighter">Le Rôle d'Authority</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed italic">
+                            "Authority n'est pas seulement un filtre, c'est l'orchestrateur et le Grand Superviseur. Il détient les clés (API, secrets) et ne les distribue qu'à la validation d'un plan d'action conforme au rôle de l'utilisateur."
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-gray-400">
+                            <span class="text-claw-yellow">⚡</span> Accès temporaires (Just-in-Time)
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-gray-400">
+                            <span class="text-claw-yellow">⚡</span> Interdiction de commandes abusives
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-gray-400">
+                            <span class="text-claw-yellow">⚡</span> Réponses adaptées au niveau d'accès
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Steps (Todo) -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.5s">
+            <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+                🚀 PROCHAINES ÉTAPES <span class="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">BACKLOG</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.prochain" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
+                    <h3 class="text-xl font-syne font-bold mb-6 text-gray-400 uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm opacity-60">
+                            <span class="todo-icon mt-1">○</span>
+                            <span class="text-gray-400 italic">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critical Vigilance Points--> 
+        <section class="md:col-span-2 glass p-10 rounded-2xl stagger-in border-claw-red/20 mb-20" style="animation-delay: 0.6s">
+            <h2 class="text-3xl font-syne font-bold mb-10 text-center uppercase tracking-tighter">VIGILANCE & POINTS CRITIQUES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div v-for="point in vigilItems" :key="point.title" class="text-center">
+                    <div class="text-4xl mb-4">{{ point.icon }}</div>
+                    <h4 class="text-claw-red font-bold mb-3 uppercase text-xs tracking-widest">{{ point.title }}</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">{{ point.text }}</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Footer -->
+        <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay: 0.7s">
+            <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">
+                Investec Advisory &bull; Platform Governance Unit &bull; 2026
+            </div>
+            <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+                <span class="text-gray-500">Node: v24.11.1</span>
+                <span class="text-gray-500">Status: Operational</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    requestWorkflow: [
+                        { id: 1, label: "Identification", title: "Auth & Role Check", desc: "L'utilisateur sollicite Authority. L'agent vérifie l'identité et le rôle RBAC pour déterminer le périmètre d'action possible." },
+                        { id: 2, label: "Dispatch", title: "Orchestration des Agents", desc: "Authority analyse le message et délègue les sous-tâches aux agents spécialisés. Aucun agent n'agit seul." },
+                        { id: 3, label: "Validation", title: "Approbation du Plan", desc: "Chaque agent soumet un plan d'action. Authority valide que le plan ne contient aucune commande abusive." },
+                        { id: 4, label: "Exécution", title: "Privilèges Temporaires", desc: "Si validé, Authority libère les accès (API, secrets) uniquement pour la durée de la tâche." },
+                        { id: 5, label: "Synthèse", title: "Supervision Finale", desc: "Authority consolide les résultats, vérifie la conformité et livre une réponse adaptée à l'utilisateur." }
+                    ],
+                    enterpriseChallenges: [
+                        {
+                            id: 1,
+                            issue: "ÉTANCHÉITÉ BANCAIRE (CHINESE WALLS)",
+                            description: "Dans une Banque d'Investissement, le risque majeur est la fuite d'informations entre des agents travaillant sur des dossiers clients concurrents.",
+                            resolution: "L'isolation stricte des sessions par agent et l'implémentation de permissions RBAC granulaires garantissent que chaque IA ne 'voit' que les documents de son périmètre immédiat."
+                        },
+                        {
+                            id: 2,
+                            issue: "AUDITABILITÉ & RÉGULATION (MIFID II / SAPIN II)",
+                            description: "Les régulateurs exigent une traçabilité totale des décisions financières. Une IA 'boîte noire' qui prend des initiatives est un risque de non-conformité.",
+                            resolution: "Nos fichiers de log capturent chaque intention d'agent, tandis que le statut PENDING impose une validation humaine (HITL) pour les actions à haut risque."
+                        },
+                        {
+                            id: 3,
+                            issue: "SÉCURITÉ DES ACCÈS (SHADOW AI)",
+                            description: "Le déploiement d'agents autonomes sans supervision peut mener à des escalades de privilèges ou à l'usage de commandes système dangereuses.",
+                            resolution: "Le Gatekeeper central (Authority Agent) valide chaque plan d'action via une blacklist Zero-Trust, bloquant nativement les outils comme curl, wget ou les accès sudo."
+                        },
+                        {
+                            id: 4,
+                            issue: "CONTRÔLE DES COÛTS ET DÉRIVE ALGORIHTMIQUE",
+                            description: "Une boucle infinie ou une exécution massive non contrôlée peut entraîner des coûts d'API exorbitants et une paralysie des services.",
+                            resolution: "Mise en place de quotas d'appels API quotidiens et de 'Cost Tracking' par session pour stopper immédiatement tout comportement divergent."
+                        }
+                    ],
+                    checklist: {
+                        realise: {
+                            "RBAC & Permissions": [
+                                "Hiérarchie des rôles métiers (President → Stagiaire)",
+                                "Granularité des ressources critiques",
+                                "Niveaux de classification C0 à C3",
+                                "Matrice de permissions par rôle"
+                            ],
+                            "Architecture Authority": [
+                                "Déploiement de l'agent Gatekeeper central",
+                                "Orchestration de supervision obligatoire",
+                                "Vérification d'intégrité des fichiers système"
+                            ],
+                            "Zero Trust & Filtrage": [
+                                "Blacklistage de commandes (curl, rm, etc.)",
+                                "Intégration AWS Secret Manager",
+                                "Quotas d'appels API quotidiens",
+                                "Restrictions temporelles et géographiques"
+                            ],
+                            "Audit & Traçabilité": [
+                                "Journalisation systématique (audit.log)",
+                                "Gestion des états PENDING pour validation"
+                            ]
+                        },
+                        prochain: {
+                            "Renforcement Technique": [
+                                "Sandboxing des processus via conteneurs",
+                                "Cost tracking par session",
+                                "Analyse statique des plans d'action"
+                            ],
+                            "Gouvernance Humaine": [
+                                "Principe des 4 yeux (Double validation)",
+                                "Dashboard Compliance temps réel"
+                            ],
+                            "Knowledge Guarding": [
+                                "Isolation fine de la connaissance client",
+                                "Masquage automatique des PII"
+                            ],
+                            "Maintenance": [
+                                "Pénétrations tests agentiques",
+                                "Rotation auto des secrets à 90j"
+                            ]
+                        },
+                        vigilences : [
+                            { icon: '🌪️', title: 'Escalade de Privilèges', text: 'Un agent pourrait tenter de modifier ses propres fichiers de configuration.' },
+                            { icon: '💉', title: 'Injection de Prompt', text: 'Un document malveillant lu par l\'agent pourrait influencer ses ordres.' },
+                            { icon: '💸', title: 'Token Burn', text: 'Les boucles infinies ou les requêtes massives peuvent exploser les coûts API.' },
+                            {icon: '👻', title: 'Fuite de Connaissance', text: 'Un agent pourrait tenter d\'exfiltrer des données sensibles via des canaux détournés.' },
+                            {icon: '⚠️', title: 'Dérive Comportementale', text: 'Surveillance des comportements anormaux ou divergents des agents sur le long terme.' },
+                            {icon: '💰', title: 'Budget API', text: 'Contrôle des coûts API en temps réel pour stopper toute dérive algorithmique ou boucle infinie.' }
+                        ]
+                    }
+                }
+            },
+            computed: {
+                doneItems() {
+                    return Object.values(this.checklist.realise).flat();
+                },
+                todoItems() {
+                    return Object.values(this.checklist.prochain).flat();
+                },
+                vigilItems() {
+                    return this.checklist.vigilences;
+                }
+            },
+            methods: {
+                getIcon(name) {
+                    const icons = {
+                        "RBAC & Permissions": "🔑",
+                        "Architecture Authority": "🏛️",
+                        "Zero Trust & Filtrage": "🛡️",
+                        "Audit & Traçabilité": "📜"
+                    };
+                    return icons[name] || "⚙️";
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
