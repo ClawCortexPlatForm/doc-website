@@ -132,3 +132,14 @@ body {
             border-bottom: 1px solid var(--claw-blue);
         }
 
+
+.nav-link {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--claw-orange);
+  border-bottom: 1px solid var(--claw-orange);
+}
