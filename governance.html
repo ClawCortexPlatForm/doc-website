@@ -30,7 +30,7 @@
             overflow-x: hidden;
         }
         .font-syne { font-family: 'Syne', sans-serif; }
-        
+
         .glass {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -88,7 +88,7 @@
             color: var(--claw-red);
             font-weight: bold;
         }
-        
+
         .todo-icon {
             color: rgba(255, 255, 255, 0.2);
         }
@@ -98,13 +98,13 @@
             color: var(--claw-red);
             border: 1px solid var(--claw-red);
         }
-        
+
         .logo-container img {
             max-height: 80px;
             width: auto;
             filter: drop-shadow(0 0 10px rgba(255, 62, 62, 0.3));
         }
-        
+
         .challenge-card {
             border-top: 3px solid var(--claw-orange);
         }
@@ -141,7 +141,7 @@
                 <div class="w-12 h-1 bg-claw-red"></div>
                 <span class="text-claw-violet uppercase tracking-widest text-sm font-bold">Investec Advisory Governance Dashboard</span>
             </div>
-            
+
             <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
                 TRUSTED <br>
                 <span class="gradient-text">AUTONOMY : Gouvernance sur OpenClaw</span>
@@ -149,7 +149,7 @@
 
             <!-- Logo OpenClaw SVG (Réadapté) -->
             <div class="logo-container mb-8">
-                <img src="favicon.svg" alt="OpenClaw Logo" class="stagger-in" style="animation-delay: 0.1s">
+                <img src="assets/logo_openclaw.svg" alt="OpenClaw Logo" class="stagger-in" style="animation-delay: 0.1s">
             </div>
 
             <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
@@ -157,7 +157,7 @@
             </p>
         </header>
 
-        
+
 
         <!-- Section: Challenges & Governance Resolution -->
         <section class="mb-20 stagger-in" style="animation-delay: 0.2s">
@@ -169,7 +169,7 @@
                     <div class="text-xs text-claw-orange font-bold mb-2 uppercase tracking-tighter">Problématique Entreprise</div>
                     <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">{{ challenge.issue }}</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed">{{ challenge.description }}</p>
-                    
+
                     <div class="pt-6 border-t border-white/5">
                         <div class="text-[10px] text-claw-violet font-bold mb-2 uppercase tracking-widest">Résolution par notre Gouvernance</div>
                         <p class="text-gray-300 text-sm font-medium">{{ challenge.resolution }}</p>
@@ -178,6 +178,50 @@
             </div>
         </section>
 
+
+        <!-- Critical Vigilance Points-->
+        <section class="md:col-span-2 glass p-10 rounded-2xl stagger-in border-claw-red/20 mb-20" style="animation-delay: 0.6s">
+            <h2 class="text-3xl font-syne font-bold mb-10 text-center uppercase tracking-tighter">VIGILANCE & POINTS CRITIQUES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div v-for="point in vigilItems" :key="point.title" class="text-center">
+                    <div class="text-4xl mb-4">{{ point.icon }}</div>
+                    <h4 class="text-claw-red font-bold mb-3 uppercase text-xs tracking-widest">{{ point.title }}</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">{{ point.text }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Architecture Zero Trust & RBAC -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.1s">
+            <h2 class="text-3xl font-syne font-800 mb-10 flex items-center gap-4 text-white uppercase">
+                <span class="text-claw-yellow">🛡️</span> Architecture Zero Trust & RBAC
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-claw-red uppercase">Le Principe Zero Trust</h3>
+                    <div class="text-gray-400 text-xl mb-8 leading-relaxed">
+                        </br>Chaque action, chaque agent, chaque requête est considérée comme potentiellement compromise par défaut.
+                        <strong>Authority</strong> ne fait confiance à personne sans validation explicite.
+                    </div>
+
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-claw-violet uppercase">Matrice RBAC Granulaire</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                        Accès défini par le rôle et la classification de la donnée (C0 à C3).
+                    </p>
+                    <div class="space-y-2">
+                        <div v-for="(role, name) in rolesPreview" :key="name" class="flex justify-between items-center text-[10px] border-b border-white/5 pb-1">
+                            <span class="font-bold text-white">{{ name }}</span>
+                            <span class="text-gray-500 uppercase">{{ role.desc }}</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-white/10 text-[10px] text-gray-500 italic">
+                        * Les stagiaires et certains analystes requièrent une supervision obligatoire pour les ressources critiques.
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Stats / Overview -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 stagger-in" style="animation-delay: 0.3s">
             <div class="glass p-6 rounded-xl border-l-3 border-l-claw-red">
@@ -203,9 +247,9 @@
         <!-- Detailed Checklist (Done) -->
         <section class="mb-20 stagger-in" style="animation-delay: 0.4s">
             <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
-                🛡️ RÉALISATIONS <span class="text-xs font-mono text-claw-red bg-claw-red/10 px-2 py-1 rounded">DÉPLOYÉ</span>
+                 RÉALISATIONS <span class="text-xs font-mono text-claw-red bg-claw-red/10 px-2 py-1 rounded">DÉPLOYÉ</span>
             </h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div v-for="(category, name) in checklist.realise" :key="name" class="glass p-8 rounded-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-1 text-4xl">
@@ -262,7 +306,7 @@
             <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
                 🚀 PROCHAINES ÉTAPES <span class="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">BACKLOG</span>
             </h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div v-for="(category, name) in checklist.prochain" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
                     <h3 class="text-xl font-syne font-bold mb-6 text-gray-400 uppercase tracking-wider">{{ name }}</h3>
@@ -275,19 +319,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Critical Vigilance Points--> 
-        <section class="md:col-span-2 glass p-10 rounded-2xl stagger-in border-claw-red/20 mb-20" style="animation-delay: 0.6s">
-            <h2 class="text-3xl font-syne font-bold mb-10 text-center uppercase tracking-tighter">VIGILANCE & POINTS CRITIQUES</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div v-for="point in vigilItems" :key="point.title" class="text-center">
-                    <div class="text-4xl mb-4">{{ point.icon }}</div>
-                    <h4 class="text-claw-red font-bold mb-3 uppercase text-xs tracking-widest">{{ point.title }}</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">{{ point.text }}</p>
-                </div>
-            </div>
-        </section>
-        
 
         <!-- Footer -->
         <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay: 0.7s">
@@ -306,12 +337,21 @@
         createApp({
             data() {
                 return {
+                    rolesPreview: {
+                        "PRESIDENT": { desc: "Accès C3 - Validation Finale" },
+                        "ASSOCIATE": { desc: "Accès C2 - Gestion Opérationnelle" },
+                        "MANAGER": { desc: "Accès C2 - Supervision Directe" },
+                        "ANALYST": { desc: "Accès C1 - Production (Supervisée)" },
+                        "STAGIAIRE": { desc: "Accès C1 - Support (Strictement Supervisé)" },
+                        "COMPLIANCE_OFFICER": { desc: "Accès C3 - Audit & Politique RBAC" }
+                    },
                     requestWorkflow: [
-                        { id: 1, label: "Identification", title: "Auth & Role Check", desc: "L'utilisateur sollicite Authority. L'agent vérifie l'identité et le rôle RBAC pour déterminer le périmètre d'action possible." },
-                        { id: 2, label: "Dispatch", title: "Orchestration des Agents", desc: "Authority analyse le message et délègue les sous-tâches aux agents spécialisés. Aucun agent n'agit seul." },
-                        { id: 3, label: "Validation", title: "Approbation du Plan", desc: "Chaque agent soumet un plan d'action. Authority valide que le plan ne contient aucune commande abusive." },
-                        { id: 4, label: "Exécution", title: "Privilèges Temporaires", desc: "Si validé, Authority libère les accès (API, secrets) uniquement pour la durée de la tâche." },
-                        { id: 5, label: "Synthèse", title: "Supervision Finale", desc: "Authority consolide les résultats, vérifie la conformité et livre une réponse adaptée à l'utilisateur." }
+                        { id: 1, label: "01. Identification", title: "Auth & Role Check", desc: "L'utilisateur sollicite Authority. L'agent vérifie l'identité et le rôle RBAC pour définir le périmètre d'action." },
+                        { id: 2, label: "02. Dispatch", title: "Délégation Métier", desc: "Authority délègue les sous-tâches aux Agents Métiers. Chaque action est isolée et soumise au protocole Zero-Trust." },
+                        { id: 3, label: "03. Plan & Log", title: "Validation Zero-Trust", desc: "L'Agent Métier génère un plan. Authority logue chaque intention et filtre les commandes abusives avant toute exécution." },
+                        { id: 4, label: "04. Supervision active", title: "Validation Superviseur", desc: "Le plan est transmis à l'Agent Superviseur dédié. Celui-ci doit confirmer la conformité de l'action avant de passer à la suivante." },
+                        { id: 5, label: "05. Synthèse Finale", title: "Grand Superviseur Authority", desc: "Une fois les Superviseurs OK, Authority valide l'ensemble, libère les secrets si nécessaire, et livre la réponse finale." },
+                        { id: 6, label: "06. Audit", title: "Archivage Hiérarchisé", desc: "Archivage des logs dans la hiérarchie dédiée." }
                     ],
                     enterpriseChallenges: [
                         {
@@ -341,34 +381,35 @@
                     ],
                     checklist: {
                         realise: {
+                            "Architecture Authority": [
+                                "Déploiement de l'agent Gatekeeper central : Authority Agent",
+                                "Orchestration de supervision obligatoire",
+                                "Vérification d'intégrité des fichiers système"
+                            ],
                             "RBAC & Permissions": [
                                 "Hiérarchie des rôles métiers (President → Stagiaire)",
                                 "Granularité des ressources critiques",
                                 "Niveaux de classification C0 à C3",
                                 "Matrice de permissions par rôle"
                             ],
-                            "Architecture Authority": [
-                                "Déploiement de l'agent Gatekeeper central",
-                                "Orchestration de supervision obligatoire",
-                                "Vérification d'intégrité des fichiers système"
-                            ],
-                            "Zero Trust & Filtrage": [
-                                "Blacklistage de commandes (curl, rm, etc.)",
-                                "Intégration AWS Secret Manager",
-                                "Quotas d'appels API quotidiens",
-                                "Restrictions temporelles et géographiques"
-                            ],
-                            "Audit & Traçabilité": [
-                                "Journalisation systématique (audit.log)",
-                                "Gestion des états PENDING pour validation"
-                            ]
-                        },
-                        prochain: {
                             "Renforcement Technique": [
                                 "Sandboxing des processus via conteneurs",
                                 "Cost tracking par session",
                                 "Analyse statique des plans d'action"
                             ],
+                            "Audit & Traçabilité": [
+                                "Journalisation systématique des intentions d'agents",
+                                "Gestion des états PENDING pour validation"
+                            ],
+                            "Zero Trust & Filtrage": [
+                                "Blacklistage de commandes (curl, rm, etc.)",
+                                "Contrôle d'accès granulaire (RBAC) basé sur les rôles et la classification C0-C3",
+                                "Gestion des secrets via \"Kubernetes\" ou \"Secrets Kubernetes\"",
+                                "Quotas d'appels API quotidiens",
+                                "Restrictions temporelles et géographiques"
+                            ]
+                        },
+                        prochain: {
                             "Gouvernance Humaine": [
                                 "Principe des 4 yeux (Double validation)",
                                 "Dashboard Compliance temps réel"
