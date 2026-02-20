@@ -3,94 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClawCortex Platform - Architecture & Skills Report</title>
+    <title>Architecture & Skills Report OpenClaw | Investec Advisory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/style.css" />
 </head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">ClawCortex<br>Platform</h1>
-            <p class="hero-subtitle">Architecture Multi-Couches • Intelligence Systémique • Hyper-Automatisation</p>
+<body class="p-4 md:p-12">
+    <div class="scanline"></div>
+    <div class="blob" style="top: -200px; right: -200px;"></div>
+    <div class="blob" style="bottom: -200px; left: -200px;"></div>
+
+  <div id="app" class="max-w-6xl mx-auto">
+
+    <nav class="flex justify-between items-center mb-12 stagger-in max-w-6xl mx-auto">
+        <div class="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+            <a href="../index.html" class="nav-link">Accueil</a>
+            <a href="agents.html" class="nav-link">Agents</a>
+            <a href="governance.html" class="nav-link">Gouvernance</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+        </div>
+        <div class="text-[10px] text-claw-orange font-bold border border-claw-orange/30 px-3 py-1 rounded">
+            ARCHITECTURE SKILLS
+        </div>
+    </nav>
+
+    <!-- Hero Section
+    <section class="mb-20 max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8 gradient-text">ClawCortex<br>Platform</h1>
+            <p class="text-xl text-gray-400 max-w-4xl leading-relaxed mb-10">Architecture Multi-Couches • Intelligence Systémique • Hyper-Automatisation</p>
             
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">20</span>
-                    <span class="stat-label">Skills Orchestrés</span>
+           
+        </div>
+    </section> -->
+
+    <header class="mb-20 stagger-in">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-1 bg-red-500"></div>
+        <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Architecture Multi-Couches</span>
+      </div>
+
+      <h1 class="text-6xl md:text-7xl font-syne font-800 leading-tight mb-8">
+        ARCHITECTURE <nobr>MULTI-COUCHES</nobr> <br>              
+        <span class="gradient-text uppercase">Intelligence Systémique • <br> Hyper-Automatisation</span>
+      </h1>
+
+      <div class="logo-container mb-8">
+          <img src="../assets/images/logo_openclaw.svg" alt="OpenClaw Logo" class="stagger-in" style="animation-delay: 0.1s">
+      </div>
+
+      <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+        Passerelles entre l'IA et vos systèmes métier. Nous transformons des sources de données disparates en un réseau de compétences structuré, interopérable et sécurisé.
+      </p>
+    </header>
+
+    <section class="mb-20 stagger-in" style="animation-delay:0.15s">
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="glass p-6 rounded-xl text-center">
+                    <span class="text-4xl font-syne font-bold text-white">20</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 mt-2 block">Skills Orchestrés</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Couches Fonctionnelles</span>
+                <div class="glass p-6 rounded-xl text-center">
+                    <span class="text-4xl font-syne font-bold text-white">5</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 mt-2 block">Couches Fonctionnelles</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">10</span>
-                    <span class="stat-label">Agents Intelligents</span>
+                <div class="glass p-6 rounded-xl text-center">
+                    <span class="text-4xl font-syne font-bold text-white">10</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 mt-2 block">Agents Intelligents</span>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Architecture Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-number">// 01</div>
-                <h2 class="section-title">Architecture Multi-Couches</h2>
-                <p class="section-description">Un cortex agentique structuré en 5 couches fonctionnelles interconnectées, formant une intelligence systémique capable d'adaptation continue.</p>
+    <section class="mb-20 max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-10">
+                <div class="text-xs text-orange-300 uppercase tracking-widest mb-2">// 01</div>
+                <h2 class="text-3xl font-syne font-bold mb-3">Architecture Multi-Couches</h2>
+                <p class="text-gray-400 text-sm max-w-4xl">Un cortex agentique structuré en 5 couches fonctionnelles interconnectées, formant une intelligence systémique capable d'adaptation continue.</p>
             </div>
 
-            <div class="architecture-grid">
-                <div class="layer-card">
-                    <div class="layer-number">01</div>
-                    <h3 class="layer-title">Métabolisme & Survie</h3>
-                    <p class="layer-description">Infrastructure de base assurant l'évolution et la résilience du système.</p>
-                    <div class="layer-skills">
-                        <div class="layer-skill-item">find-skills → Système immunitaire</div>
-                        <div class="layer-skill-item">api-gateway → Hub centralisé</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-2xl section-card">
+                    <div class="text-xs text-orange-300 font-bold uppercase tracking-widest mb-2 block">01</div>
+                    <h3 class="text-xl font-syne font-bold mb-3 text-purple-300">Métabolisme & Survie</h3>
+                    <p class="text-gray-400 text-sm mb-4">Infrastructure de base assurant l'évolution et la résilience du système.</p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-300">find-skills → Système immunitaire</div>
+                        <div class="text-sm text-gray-300">api-gateway → Hub centralisé</div>
                     </div>
                 </div>
 
-                <div class="layer-card">
-                    <div class="layer-number">02</div>
-                    <h3 class="layer-title">Perception Augmentée</h3>
-                    <p class="layer-description">Omniscience sensorielle via triangulation multi-sources.</p>
-                    <div class="layer-skills">
-                        <div class="layer-skill-item">Tavily → Précision factuelle</div>
-                        <div class="layer-skill-item">Super-WebSearch → Immédiateté</div>
-                        <div class="layer-skill-item">Reddit Insights → Contexte humain</div>
+                <div class="glass p-8 rounded-2xl section-card">
+                    <div class="text-xs text-orange-300 font-bold uppercase tracking-widest mb-2 block">02</div>
+                    <h3 class="text-xl font-syne font-bold mb-3 text-purple-300">Perception Augmentée</h3>
+                    <p class="text-gray-400 text-sm mb-4">Omniscience sensorielle via triangulation multi-sources.</p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-300">Tavily → Précision factuelle</div>
+                        <div class="text-sm text-gray-300">Super-WebSearch → Immédiateté</div>
+                        <div class="text-sm text-gray-300">Reddit Insights → Contexte humain</div>
                     </div>
                 </div>
 
-                <div class="layer-card">
-                    <div class="layer-number">03</div>
-                    <h3 class="layer-title">Régulation & Surmoi</h3>
-                    <p class="layer-description">Haute gouvernance avec triple filtre de sécurité.</p>
-                    <div class="layer-skills">
-                        <div class="layer-skill-item">Zero-Trust → Est-ce prudent ?</div>
-                        <div class="layer-skill-item">Praesidia → Est-ce de confiance ?</div>
-                        <div class="layer-skill-item">Compliance → Est-ce légal ?</div>
+                <div class="glass p-8 rounded-2xl section-card">
+                    <div class="text-xs text-orange-300 font-bold uppercase tracking-widest mb-2 block">03</div>
+                    <h3 class="text-xl font-syne font-bold mb-3 text-purple-300">Régulation & Surmoi</h3>
+                    <p class="text-gray-400 text-sm mb-4">Haute gouvernance avec triple filtre de sécurité.</p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-300">Zero-Trust → Est-ce prudent ?</div>
+                        <div class="text-sm text-gray-300">Praesidia → Est-ce de confiance ?</div>
+                        <div class="text-sm text-gray-300">Compliance → Est-ce légal ?</div>
                     </div>
                 </div>
 
-                <div class="layer-card">
-                    <div class="layer-number">04</div>
-                    <h3 class="layer-title">Action Stratégique</h3>
-                    <p class="layer-description">Exécution de haut niveau avec expertise verticale.</p>
-                    <div class="layer-skills">
-                        <div class="layer-skill-item">Stock Explorer → Analyse financière</div>
-                        <div class="layer-skill-item">Lawyer → Expertise juridique</div>
-                        <div class="layer-skill-item">LinkedIn CLI → Infiltration sociale</div>
+                <div class="glass p-8 rounded-2xl section-card">
+                    <div class="text-xs text-orange-300 font-bold uppercase tracking-widest mb-2 block">04</div>
+                    <h3 class="text-xl font-syne font-bold mb-3 text-purple-300">Action Stratégique</h3>
+                    <p class="text-gray-400 text-sm mb-4">Exécution de haut niveau avec expertise verticale.</p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-300">Stock Explorer → Analyse financière</div>
+                        <div class="text-sm text-gray-300">Lawyer → Expertise juridique</div>
+                        <div class="text-sm text-gray-300">LinkedIn CLI → Infiltration sociale</div>
                     </div>
                 </div>
 
-                <div class="layer-card">
-                    <div class="layer-number">05</div>
-                    <h3 class="layer-title">Proactivité</h3>
-                    <p class="layer-description">Autonomie cognitive - De l'IA réactive à l'IA partenaire.</p>
-                    <div class="layer-skills">
-                        <div class="layer-skill-item">Proactive Agent → Sentinelle autonome</div>
-                        <div class="layer-skill-item">CRON Jobs → Surveillance continue</div>
+                <div class="glass p-8 rounded-2xl section-card">
+                    <div class="text-xs text-orange-300 font-bold uppercase tracking-widest mb-2 block">05</div>
+                    <h3 class="text-xl font-syne font-bold mb-3 text-purple-300">Proactivité</h3>
+                    <p class="text-gray-400 text-sm mb-4">Autonomie cognitive - De l'IA réactive à l'IA partenaire.</p>
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-300">Proactive Agent → Sentinelle autonome</div>
+                        <div class="text-sm text-gray-300">CRON Jobs → Surveillance continue</div>
                     </div>
                 </div>
             </div>
@@ -98,425 +142,425 @@
     </section>
 
     <!-- Skills Inventory -->
-    <section class="section" style="background: rgba(0, 102, 255, 0.03);">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-number">// 02</div>
-                <h2 class="section-title">Inventaire des 20 Skills</h2>
-                <p class="section-description">Présentation détaillée de chaque skill avec sa fonction, son usage et les agents qui l'utilisent.</p>
+    <section class="mb-20 max-w-6xl mx-auto" style="background: rgba(0, 102, 255, 0.03);">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-10">
+                <div class="text-xs text-orange-300 uppercase tracking-widest mb-2">// 02</div>
+                <h2 class="text-3xl font-syne font-bold mb-3">Inventaire des 20 Skills</h2>
+                <p class="text-gray-400 text-sm max-w-4xl">Présentation détaillée de chaque skill avec sa fonction, son usage et les agents qui l'utilisent.</p>
             </div>
 
             <!-- Catégorie: Recherche & Veille -->
-            <div class="category-section">
-                <h3 class="category-title">Recherche & Veille</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-header">
+            <div class="mb-14">
+                <h3 class="text-2xl font-syne font-bold mb-6 text-white">Recherche & Veille</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Tavily Web Search</div>
-                                <div class="skill-category">Recherche</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Tavily Web Search</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Recherche</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Recherche web temps réel avancée avec précision factuelle sur sources officielles.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Veille concurrentielle, contexte marché, fact-checking
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Media Intelligence</span>
-                            <span class="agent-tag">Fact Checking</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Media Intelligence</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Fact Checking</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Super WebSearch</div>
-                                <div class="skill-category">Recherche</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Super WebSearch</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Recherche</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Recherche web ultra-rapide avec faible latence pour résultats immédiats.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Fact-checking rapide, recherches urgentes
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Media Intelligence</span>
-                            <span class="agent-tag">Fact Checking</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Media Intelligence</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Fact Checking</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Reddit Insights</div>
-                                <div class="skill-category">Recherche</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Reddit Insights</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Recherche</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Analyse de discussions Reddit et sentiment analysis pour détecter signaux faibles.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Veille communautaire, sentiment client, friction produit
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Media Intelligence</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Media Intelligence</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Stock Info Explorer</div>
-                                <div class="skill-category">Recherche</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Stock Info Explorer</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Recherche</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Données financières et cours de bourse en temps réel avec analyse de ratios.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Valorisations, analyse financière, comparables boursiers
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Operational Intelligence</span>
-                            <span class="agent-tag">Fact Checking</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Operational Intelligence</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Fact Checking</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Find Skills</div>
-                                <div class="skill-category">Infrastructure</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Find Skills</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Infrastructure</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Découverte et installation dynamique de nouveaux skills - Système immunitaire.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Extension capacités à la volée, auto-évolution
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Catégorie: Documents & Analyse -->
-            <div class="category-section">
-                <h3 class="category-title">Documents & Analyse</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-header">
+            <div class="mb-14">
+                <h3 class="text-2xl font-syne font-bold mb-6 text-white">Documents & Analyse</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Summarize</div>
-                                <div class="skill-category">Documents</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Summarize</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Documents</div>
                             </div>
-                            <div class="skill-status">✓ Opérationnel</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Opérationnel</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Résumés automatiques de documents, threads, conversations - Extraction de l'essentiel.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Synthèses rapports M&A, extraction points clés
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Document Intelligence</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Document Intelligence</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Nano-PDF</div>
-                                <div class="skill-category">Documents</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Nano-PDF</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Documents</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Analyse et annotation de documents PDF avec extraction texte intelligente.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Due diligence, rapports financiers, contrats
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Document Intelligence</span>
-                            <span class="agent-tag">Version Resolver</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Document Intelligence</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Version Resolver</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Quality Doc Manager</div>
-                                <div class="skill-category">Documents</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Quality Doc Manager</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Documents</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Gestion qualité documentaire, versioning et traçabilité complète.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Détection modifications, audit trail, versions
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Version Resolver</span>
-                            <span class="agent-tag">Compliance Agent</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Version Resolver</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Compliance Agent</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Catégorie: Juridique & Compliance -->
-            <div class="category-section">
-                <h3 class="category-title">Juridique & Compliance</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-header">
+            <div class="mb-14">
+                <h3 class="text-2xl font-syne font-bold mb-6 text-white">Juridique & Compliance</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Lawyer</div>
-                                <div class="skill-category">Juridique</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Lawyer</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Juridique</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Analyse juridique et contractuelle avec identification clauses critiques.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Revue contrats M&A, risques juridiques
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Compliance Agent</span>
-                            <span class="agent-tag">Document Intelligence</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Compliance Agent</span>
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Document Intelligence</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Compliance Officer</div>
-                                <div class="skill-category">Juridique</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Compliance Officer</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Juridique</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Vérification conformité réglementaire (RGPD, KYC, AML) et détection red flags.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Conformité M&A, vérifications réglementaires
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Compliance Agent</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Compliance Agent</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Compliance Audit</div>
-                                <div class="skill-category">Juridique</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Compliance Audit</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Juridique</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Génération structurée d'audits de conformité automatiques.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Rapports audit, checklists conformité
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Compliance Agent</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Compliance Agent</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Praesidia</div>
-                                <div class="skill-category">Sécurité</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Praesidia</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Sécurité</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Guardrails éthiques et validation de confiance pour toutes les actions.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Vérification intégrité données, validation décisions
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous (Sécurité globale)</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous (Sécurité globale)</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Catégorie: Collaboration & Social -->
-            <div class="category-section">
-                <h3 class="category-title">Collaboration & Réseaux Sociaux</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-header">
+            <div class="mb-14">
+                <h3 class="text-2xl font-syne font-bold mb-6 text-white">Collaboration & Réseaux Sociaux</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">gog</div>
-                                <div class="skill-category">Collaboration</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">gog</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Collaboration</div>
                             </div>
-                            <div class="skill-status">✓ Configuré</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Configuré</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Accès complet Google Workspace (Drive, Docs, Sheets, Gmail, Calendar).
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Lecture/écriture documents, gestion emails
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous (sauf Social)</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous (sauf Social)</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Notion</div>
-                                <div class="skill-category">Collaboration</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Notion</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Collaboration</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Intégration Notion pour collaboration équipe et templates processus.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Notes équipe, templates M&A, knowledge base
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Équipe</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Équipe</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">LinkedIn CLI</div>
-                                <div class="skill-category">Social</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">LinkedIn CLI</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Social</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Interaction LinkedIn (scraping, publication) pour infiltration relationnelle.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Publication deals, recherche executives, veille
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Social Presence</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Social Presence</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Social Media Agent</div>
-                                <div class="skill-category">Social</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Social Media Agent</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Social</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Gestion multi-plateformes (Twitter, LinkedIn, etc.) coordonnée.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Publication cross-platform, veille sociale
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Social Presence</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Social Presence</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Catégorie: Intelligence & Infrastructure -->
-            <div class="category-section">
-                <h3 class="category-title">Intelligence & Infrastructure</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-header">
+            <div class="mb-14">
+                <h3 class="text-2xl font-syne font-bold mb-6 text-white">Intelligence & Infrastructure</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Ontology</div>
-                                <div class="skill-category">Intelligence</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Ontology</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Intelligence</div>
                             </div>
-                            <div class="skill-status">✓ Opérationnel</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Opérationnel</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Structuration et classification connaissances en graphe de connaissances.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Organisation deals/secteurs, traçabilité décisions
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous (Traçabilité)</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous (Traçabilité)</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">Proactive Agent</div>
-                                <div class="skill-category">Intelligence</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">Proactive Agent</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Intelligence</div>
                             </div>
-                            <div class="skill-status">✓ Opérationnel</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Opérationnel</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Agent autonome anticipant les besoins avec surveillance CRON.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Suggestions proactives, détection opportunités
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous (CRON)</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous (CRON)</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">API Gateway</div>
-                                <div class="skill-category">Infrastructure</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">API Gateway</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Infrastructure</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Hub centralisé pour toutes connexions APIs externes (architecture étoile).
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Intégration CRM, data providers, webhooks
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Tous</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Tous</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-header">
+                    <div class="glass p-8 rounded-2xl section-card">
+                        <div class="flex justify-between items-start mb-4 gap-3">
                             <div>
-                                <div class="skill-name">SkipLagged Flights</div>
-                                <div class="skill-category">Utilitaires</div>
+                                <div class="text-xl font-syne font-bold text-purple-300">SkipLagged Flights</div>
+                                <div class="text-[10px] uppercase tracking-widest text-gray-400">Utilitaires</div>
                             </div>
-                            <div class="skill-status">✓ Installé</div>
+                            <div class="text-[10px] uppercase tracking-widest text-orange-300 border border-orange-300/40 px-2 py-1 rounded">✓ Installé</div>
                         </div>
-                        <div class="skill-function">
+                        <div class="text-sm text-gray-400 mb-3">
                             Recherche de vols optimisés pour déplacements business.
                         </div>
-                        <div class="skill-usage">
+                        <div class="text-sm text-gray-300 mb-3">
                             <strong>Usage :</strong> Organisation déplacements équipe
                         </div>
-                        <div class="skill-agents">
-                            <span class="agent-tag">Équipe</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-300 border border-white/20 px-2 py-1 rounded">Équipe</span>
                         </div>
                     </div>
                 </div>
@@ -525,88 +569,88 @@
     </section>
 
     <!-- Workflow Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-number">// 03</div>
-                <h2 class="section-title">Workflow Complexe Validé</h2>
-                <p class="section-description">Cas d'usage : Analyse M&A complète sur Tesla (TSLA) en moins de 60 secondes. Démonstration de la triangulation multi-skills.</p>
+    <section class="mb-20 max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-10">
+                <div class="text-xs text-orange-300 uppercase tracking-widest mb-2">// 03</div>
+                <h2 class="text-3xl font-syne font-bold mb-3">Workflow Complexe Validé</h2>
+                <p class="text-gray-400 text-sm max-w-4xl">Cas d'usage : Analyse M&A complète sur Tesla (TSLA) en moins de 60 secondes. Démonstration de la triangulation multi-skills.</p>
             </div>
 
-            <div class="workflow-timeline">
-                <div class="workflow-step">
-                    <div class="workflow-number">01</div>
-                    <div class="workflow-content">
-                        <h3 class="workflow-title">Santé Financière</h3>
-                        <div class="workflow-skill">Skill → Stock Info Explorer</div>
+            <div class="space-y-8">
+                <div class="glass p-8 rounded-2xl section-card grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-4xl font-syne font-bold text-orange-300">01</div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-syne font-bold mb-2">Santé Financière</h3>
+                        <div class="text-xs uppercase tracking-widest text-purple-300 mb-3">Skill → Stock Info Explorer</div>
                         <p style="color: var(--text-dim); margin-bottom: 20px;">
                             Récupération des métriques financières clés pour évaluer rapidement la valorisation de la cible.
                         </p>
-                        <div class="workflow-results">
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Market Cap:</span> $1.54 Trillion USD
+                        <div class="glass p-4 rounded-xl mt-3">
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Market Cap:</span> $1.54 Trillion USD
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">P/E Ratio:</span> 146.81 (Valorisation basée croissance future)
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">P/E Ratio:</span> 146.81 (Valorisation basée croissance future)
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">ROE:</span> 4.9%
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">ROE:</span> 4.9%
                             </div>
                         </div>
-                        <div class="workflow-verdict">
+                        <div class="bg-red-500/10 border border-red-400/30 p-4 rounded-xl mt-3 text-sm font-bold text-red-200">
                             ⚠️ Verdict : Forte pression sur performance opérationnelle pour justifier la valorisation
                         </div>
                     </div>
                 </div>
 
-                <div class="workflow-step">
-                    <div class="workflow-number">02</div>
-                    <div class="workflow-content">
-                        <h3 class="workflow-title">Analyse de Friction Client</h3>
-                        <div class="workflow-skill">Skill → Reddit Insights</div>
+                <div class="glass p-8 rounded-2xl section-card grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-4xl font-syne font-bold text-orange-300">02</div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-syne font-bold mb-2">Analyse de Friction Client</h3>
+                        <div class="text-xs uppercase tracking-widest text-purple-300 mb-3">Skill → Reddit Insights</div>
                         <p style="color: var(--text-dim); margin-bottom: 20px;">
                             Détection de signaux faibles via discussions communautaires non visibles dans rapports officiels.
                         </p>
-                        <div class="workflow-results">
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Source:</span> r/TeslaModel3
+                        <div class="glass p-4 rounded-xl mt-3">
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Source:</span> r/TeslaModel3
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Signaux:</span> Discussions livraison, expérience SAV
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Signaux:</span> Discussions livraison, expérience SAV
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Points friction:</span> Surchauffe composants isolés
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Points friction:</span> Surchauffe composants isolés
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Sentiment:</span> Majoritairement positif ("Best purchase ever")
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Sentiment:</span> Majoritairement positif ("Best purchase ever")
                             </div>
                         </div>
-                        <div class="workflow-verdict">
+                        <div class="bg-red-500/10 border border-red-400/30 p-4 rounded-xl mt-3 text-sm font-bold text-red-200">
                             ⚠️ Verdict : Sentiment positif mais friction mineure service après-vente à surveiller
                         </div>
                     </div>
                 </div>
 
-                <div class="workflow-step">
-                    <div class="workflow-number">03</div>
-                    <div class="workflow-content">
-                        <h3 class="workflow-title">Audit de Risque Réglementaire</h3>
-                        <div class="workflow-skill">Skill → Compliance Officer</div>
+                <div class="glass p-8 rounded-2xl section-card grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-4xl font-syne font-bold text-orange-300">03</div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-syne font-bold mb-2">Audit de Risque Réglementaire</h3>
+                        <div class="text-xs uppercase tracking-widest text-purple-300 mb-3">Skill → Compliance Officer</div>
                         <p style="color: var(--text-dim); margin-bottom: 20px;">
                             Identification proactive des risques juridiques et réglementaires avant due diligence.
                         </p>
-                        <div class="workflow-results">
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Risque 1:</span> Sécurité données (RGPD) - Véhicules connectés
+                        <div class="glass p-4 rounded-xl mt-3">
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Risque 1:</span> Sécurité données (RGPD) - Véhicules connectés
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Risque 2:</span> Régulations FTC - Allégations Full Self-Driving
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Risque 2:</span> Régulations FTC - Allégations Full Self-Driving
                             </div>
-                            <div class="workflow-result-item">
-                                <span class="workflow-result-label">Risque 3:</span> Conformité environnementale - Batteries
+                            <div class="text-sm text-gray-300 mb-2">
+                                <span class="text-orange-300 font-bold">Risque 3:</span> Conformité environnementale - Batteries
                             </div>
                         </div>
-                        <div class="workflow-verdict">
+                        <div class="bg-red-500/10 border border-red-400/30 p-4 rounded-xl mt-3 text-sm font-bold text-red-200">
                             ⚠️ Verdict : Risques réglementaires identifiés nécessitent mitigation avant transaction
                         </div>
                     </div>
@@ -636,19 +680,21 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h2 class="footer-title">Prêt pour l'Hyper-Automatisation</h2>
-            <p class="footer-text">
+    <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-syne font-bold mb-4 gradient-text">Prêt pour l'Hyper-Automatisation</h2>
+            <p class="text-gray-400 text-sm mb-6">
                 Chaque skill est une brique d'un édifice conçu pour la délégation totale<br>
                 avec gouvernance éthique et traçabilité complète.
             </p>
-            <div class="footer-meta">
+            <div class="text-[10px] text-gray-500 uppercase tracking-widest">
                 ClawCortex Platform • Instance : Production<br>
                 Équipe Skills - ClawCortexPlatForm<br>
                 20 février 2026
             </div>
         </div>
     </footer>
+</div>
+
 </body>
 </html>
