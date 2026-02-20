@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agents OpenClaw | Investec Advisory</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body class="p-4 md:p-12">
+    <div class="scanline"></div>
+    <div class="blob" style="top: -200px; right: -200px"></div>
+    <div class="blob" style="bottom: -200px; left: -200px"></div>
+
+    <div id="app" class="max-w-6xl mx-auto">
+      <!-- Navigation -->
+      <nav class="flex justify-between items-center mb-12 stagger-in">
+        <div class="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+          <a href="../index.html" class="nav-link">Accueil</a>
+          <a href="agents.html" class="nav-link">Agents</a>
+          <a href="governance.html" class="nav-link">Gouvernance</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+        </div>
+        <div
+          class="
+            text-[10px] text-claw-orange
+            font-bold
+            border border-claw-orange/30
+            px-3
+            py-1
+            rounded
+          "
+        >
+          PÔLE AGENTS
+        </div>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-20 stagger-in">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-1 bg-red-500"></div>
+          <span
+            class="text-purple-400 uppercase tracking-widest text-sm font-bold"
+            >Investec Advisory Agent Intelligence</span
+          >
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
+          AGENTS <br />
+          <span class="gradient-text">ECOSYSTEM</span>
+        </h1>
+        <!-- Logo OpenClaw SVG (Réadapté) -->
+        <div class="logo-container mb-8">
+          <img
+            src="../assets/images/logo_openclaw.svg"
+            alt="OpenClaw Logo"
+            class="stagger-in"
+            style="animation-delay: 0.1s"
+          />
+        </div>
+
+        <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+          Déploiement, standardisation et orchestration de l'intelligence
+          distribuée. Le Pôle Agents assure la puissance opérationnelle sous le
+          contrôle strict de la Gouvernance.
+        </p>
+      </header>
+
+      <!-- Section: L'Equipe d'Agents -->
+      <section class="mb-20 stagger-in" style="animation-delay: 0.1s">
+        <h2
+          class="
+            text-3xl
+            font-syne font-800
+            mb-10
+            flex
+            items-center
+            gap-4
+            text-white
+            uppercase
+          "
+        >
+          <span class="text-claw-orange">🤖</span> L'Ecosystème Déployé
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            v-for="agent in agents"
+            :key="agent"
+            class="
+              glass
+              p-4
+              rounded-xl
+              text-center
+              border-l-2 border-claw-orange/20
+            "
+          >
+            <div class="text-[9px] text-gray-500 uppercase mb-1">
+              Active Agent
+            </div>
+            <div class="text-xs font-bold text-white">{{ agent }}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Checklist (Done) -->
+      <section class="mb-20 stagger-in" style="animation-delay: 0.2s">
+        <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+          🚀 RÉALISATIONS
+          <span
+            class="
+              text-xs
+              font-mono
+              text-claw-orange
+              bg-claw-orange/10
+              px-2
+              py-1
+              rounded
+            "
+            >STABLE</span
+          >
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            v-for="(category, name) in checklist.realise"
+            :key="name"
+            class="glass p-8 rounded-2xl relative overflow-hidden"
+          >
+            <h3
+              class="
+                text-xl
+                font-syne font-bold
+                mb-6
+                text-claw-yellow
+                uppercase
+                tracking-wider
+              "
+            >
+              {{ name }}
+            </h3>
+            <ul class="space-y-4">
+              <li
+                v-for="item in category"
+                :key="item"
+                class="flex gap-4 items-start text-sm"
+              >
+                <span class="check-icon mt-1">✓</span>
+                <span class="text-gray-300">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Steps (Todo) -->
+      <section class="mb-20 stagger-in" style="animation-delay: 0.3s">
+        <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+          🔮 PROCHAINES ÉTAPES
+          <span
+            class="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded"
+            >ROADMAP</span
+          >
+        </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.prochain" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
+                    <h3 class="text-xl font-syne font-bold mb-6 text-gray-400 uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm opacity-60">
+                            <span class="todo-icon mt-1">○</span>
+                            <span class="text-gray-400 italic">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+      <!-- Footer -->
+      <footer
+        class="
+          flex flex-col
+          md:flex-row
+          justify-between
+          items-center
+          border-t border-white/10
+          pt-10
+          pb-20
+          stagger-in
+        "
+        style="animation-delay: 0.4s"
+      >
+        <div
+          class="
+            text-[10px] text-gray-600
+            mb-4
+            md:mb-0
+            uppercase
+            tracking-[0.2em]
+          "
+        >
+          Investec Advisory &bull; Agent Intelligence Unit &bull; 2026
+        </div>
+        <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+          <span class="text-gray-500">Node: v24.11.1</span>
+          <span class="text-gray-500">Status: Operational</span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            agents: [
+              "Authority",
+              "Activity Monitor",
+              "Document Intel",
+              "Version Resolver",
+              "Fact Checking",
+              "Compliance",
+              "Operational Intel",
+              "Media Intel",
+              "Social Presence",
+              "Origination",
+              "Delivery",
+            ],
+            checklist: {
+              realise: {
+                "Architecture & Orchestration": [
+                  "Agent Authority centralisé opérationnel",
+                  "11 agents spécialisés déployés et isolés",
+                  "Séparation stricte des responsabilités",
+                  "Orchestration hiérarchique validée",
+                ],
+                "Standardisation Agentique": [
+                  "Fichiers de gouvernance (IDENTITY, SOUL, etc.) pour chaque agent",
+                  "Cohérence et auditabilité garantie",
+                  "Traçabilité des contextes via MEMORY.md",
+                ],
+                "Configuration RBAC": [
+                  "Définition complète des rôles (PRESIDENT → STAGIAIRE)",
+                  "Matrice de permissions par ressource critique",
+                  "Niveaux de classification C0 à C3 implémentés",
+                  "Gestion des secrets configurée",
+                ],
+                "Gouvernance & Sécurité": [
+                  "Interception obligatoire par Authority",
+                  "Protocole Evidence First (Fact-Checking)",
+                  "Cloisonnement des connaissances client",
+                  "Rotation automatisée des secrets (90j)",
+                  "Supervision croisée (Compliance / Fact-Checking)",
+                ],
+              },
+              prochain: {
+                "Robustesse & HITL": [
+                  "Protocole d'escalade automatique en cas de conflit",
+                  "Scoring de confiance par agent",
+                  "Intégration Human-in-the-loop (HITL) systématique",
+                  "Double validation (4-eyes) pour actions irréversibles",
+                ],
+                "Knowledge Guarding": [
+                  "Restriction dynamique par contexte client",
+                  "Filtrage auto des PII dans les réponses",
+                  "Audit périodique des périmètres d'accès",
+                ],
+              },
+            },
+          };
+        },
+      }).mount("#app");
+    </script>
+</body>
+</html>
