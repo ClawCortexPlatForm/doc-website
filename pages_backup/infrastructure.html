@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pôle Infrastructure | Dashboard OpenClaw</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #e0e0e0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            /* OpenClaw Palette */
+            --claw-red: #ff3e3e;
+            --claw-violet: #9d4edd;
+            --claw-orange: #ff9100;
+            --claw-yellow: #ffcc00;
+            --claw-blue: #00d2ff;
+            --claw-noir: #000000;
+            --accent: var(--claw-blue);
+        }
+        body {
+            background-color: var(--claw-noir);
+            background: radial-gradient(circle at top right, #0b1a2e 0%, var(--claw-noir) 100%);
+            color: var(--text);
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+        }
+        .font-syne { font-family: 'Syne', sans-serif; }
+
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass:hover {
+            border-color: var(--claw-blue);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--claw-blue), var(--claw-violet), var(--claw-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 210, 255, 0.05);
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            pointer-events: none;
+            animation: scan 12s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        .blob {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .stagger-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .check-icon {
+            color: var(--claw-blue);
+            font-weight: bold;
+        }
+
+        .todo-icon {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        .nav-link:hover {
+            color: var(--claw-blue);
+            border-bottom: 1px solid var(--claw-blue);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+    <div class="scanline"></div>
+    <div class="blob" style="top: -200px; right: -200px;"></div>
+    <div class="blob" style="bottom: -200px; left: -200px;"></div>
+
+    <div id="app" class="max-w-6xl mx-auto">
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center mb-12 stagger-in">
+            <div class="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="agents.html" class="nav-link">Agents</a>
+                <a href="governance.html" class="nav-link">Gouvernance</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="infrastructure.html" class="nav-link text-claw-blue">Infrastructure</a>
+            </div>
+            <div class="text-[10px] text-claw-blue font-bold border border-claw-blue/30 px-3 py-1 rounded">
+                PÔLE INFRA & CI/CD
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="mb-20 stagger-in">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-claw-blue"></div>
+                <span class="text-claw-blue uppercase tracking-widest text-sm font-bold">Investec Advisory Cloud Infrastructure</span>
+            </div>
+
+            <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
+                SCALABLE <br>
+                <span class="gradient-text">FOUNDATION</span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+                Hébergement haute disponibilité et déploiement continu. 
+                Nous construisons le socle robuste qui permet à l'intelligence de s'exécuter en toute sécurité sur Hostinger.
+            </p>
+        </header>
+
+        <!-- Section: Infrastructure Overview -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 stagger-in" style="animation-delay: 0.1s">
+            <div class="glass p-6 rounded-xl border-l-3 border-l-claw-blue">
+                <div class="text-gray-500 text-xs uppercase mb-2">Provider</div>
+                <div class="text-2xl font-syne font-bold">HOSTINGER VPS</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <div class="text-gray-500 text-xs uppercase mb-2">Orchestration</div>
+                <div class="text-2xl font-syne font-bold text-claw-violet">KUBERNETES</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <div class="text-gray-500 text-xs uppercase mb-2">Pipeline</div>
+                <div class="text-2xl font-syne font-bold">GITHUB ACTIONS</div>
+            </div>
+        </section>
+
+        <!-- Detailed Checklist (Done) -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.2s">
+            <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+                🛠️ RÉALISATIONS <span class="text-xs font-mono text-claw-blue bg-claw-blue/10 px-2 py-1 rounded">DÉPLOYÉ</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.realise" :key="name" class="glass p-8 rounded-2xl relative overflow-hidden">
+                    <h3 class="text-xl font-syne font-bold mb-6 text-claw-blue uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm">
+                            <span class="check-icon mt-1">✓</span>
+                            <span class="text-gray-300">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Steps (Todo) -->
+        <section class="mb-20 stagger-in" style="animation-delay: 0.3s">
+            <h2 class="text-3xl font-syne font-bold mb-10 flex items-center gap-4">
+                🚀 PROCHAINES ÉTAPES <span class="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">BACKLOG</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div v-for="(category, name) in checklist.prochain" :key="name" class="glass p-8 rounded-2xl border-dashed border-white/20">
+                    <h3 class="text-xl font-syne font-bold mb-6 text-gray-400 uppercase tracking-wider">{{ name }}</h3>
+                    <ul class="space-y-4">
+                        <li v-for="item in category" :key="item" class="flex gap-4 items-start text-sm opacity-60">
+                            <span class="todo-icon mt-1">○</span>
+                            <span class="text-gray-400 italic">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay: 0.4s">
+            <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">
+                Investec Advisory &bull; Infra & CI/CD Unit &bull; 2026
+            </div>
+            <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+                <span class="text-gray-500">Host: Hostinger VPS</span>
+                <span class="text-gray-500">OS: Ubuntu 22.04 LTS</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    checklist: {
+                        realise: {
+                            "Infrastructure Hostinger": [
+                                "Provisionnement VPS Ubuntu 22.04 LTS",
+                                "Sécurisation SSH (clés dédiées)",
+                                "Configuration Firewall & Ports (SSH, HTTP/S)",
+                                "Groupe de sécurité optimisé"
+                            ],
+                            "Conteneurisation & Orchestration": [
+                                "Image Docker Gateway OpenClaw",
+                                "Sandboxing des 11 agents (Bookworm-slim)",
+                                "Installation cluster Kubernetes (k3s/microk8s)",
+                                "Déploiement des manifests (Deployments, Services)"
+                            ],
+                            "CI/CD & Automation": [
+                                "Pipeline GitHub Actions opérationnel",
+                                "Déploiement automatique via SSH/Kubectl",
+                                "Génération automatique des tokens Gateway",
+                                "Gestion des secrets Kubernetes"
+                            ],
+                            "Monitoring & Sécurité": [
+                                "Hardening OS (iptables, désactivation root)",
+                                "Scan d'images Docker (Trivy) intégré au pipeline",
+                                "Collecte centralisée des logs (kubectl logs)",
+                                "Alerting de base sur charge CPU/RAM"
+                            ]
+                        },
+                        prochain: {
+                            "Orchestration Avancée": [
+                                "Cluster multi-nœuds (High Availability)",
+                                "Implémentation des Network Policies (Isolation inter-agents)",
+                                "Ingress Controller avec TLS Let's Encrypt",
+                                "Templates Helm pour la gestion des manifests"
+                            ],
+                            "CI/CD & Observabilité": [
+                                "Rotation automatisée des secrets (CronJobs)",
+                                "Environnement de Staging dédié",
+                                "Dashboard centralisé Grafana",
+                                "Analyse de logs avancée (ELK Stack)"
+                            ],
+                            "Sécurité & Compliance": [
+                                "Signature et vérification des images (Cosign)",
+                                "Audit de sécurité K8s (kube-bench/hunter)",
+                                "Chiffrement des données au repos",
+                                "Tests de pénétration infrastructurels réguliers"
+                            ]
+                        }
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
