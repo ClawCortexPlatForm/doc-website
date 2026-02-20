@@ -9,100 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #050505;
-            --text: #e0e0e0;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            /* OpenClaw Palette */
-            --claw-red: #ff3e3e;
-            --claw-violet: #9d4edd;
-            --claw-orange: #ff9100;
-            --claw-yellow: #ffcc00;
-            --claw-blue: #00d2ff;
-            --claw-noir: #000000;
-            --accent: var(--claw-blue);
-        }
-        body {
-            background-color: var(--claw-noir);
-            background: radial-gradient(circle at top right, #0b1a2e 0%, var(--claw-noir) 100%);
-            color: var(--text);
-            font-family: 'Space Mono', monospace;
-            overflow-x: hidden;
-        }
-        .font-syne { font-family: 'Syne', sans-serif; }
-
-        .glass {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        .glass:hover {
-            border-color: var(--claw-blue);
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.1);
-        }
-
-        .gradient-text {
-            background: linear-gradient(45deg, var(--claw-blue), var(--claw-violet), var(--claw-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .scanline {
-            width: 100%;
-            height: 2px;
-            background: rgba(0, 210, 255, 0.05);
-            position: fixed;
-            z-index: 100;
-            top: 0;
-            pointer-events: none;
-            animation: scan 12s linear infinite;
-        }
-
-        @keyframes scan {
-            0% { top: -10%; }
-            100% { top: 110%; }
-        }
-
-        .blob {
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0, 210, 255, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-        }
-
-        .stagger-in {
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .check-icon {
-            color: var(--claw-blue);
-            font-weight: bold;
-        }
-
-        .todo-icon {
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .nav-link {
-            transition: all 0.3s ease;
-            border-bottom: 1px solid transparent;
-        }
-        .nav-link:hover {
-            color: var(--claw-blue);
-            border-bottom: 1px solid var(--claw-blue);
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body class="p-4 md:p-12">
     <div class="scanline"></div>
@@ -127,8 +34,8 @@
         <!-- Header -->
         <header class="mb-20 stagger-in">
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-1 bg-claw-blue"></div>
-                <span class="text-claw-blue uppercase tracking-widest text-sm font-bold">Investec Advisory Cloud Infrastructure</span>
+                <div class="w-12 h-1 bg-red-500"></div>
+                <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Cloud Infrastructure</span>
             </div>
 
             <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
@@ -136,6 +43,11 @@
                 <span class="gradient-text">FOUNDATION</span>
             </h1>
 
+            <!-- Logo OpenClaw SVG (Réadapté) -->
+            <div class="logo-container mb-8">
+                <img src="../assets/images/logo_openclaw.svg" alt="OpenClaw Logo" class="stagger-in" style="animation-delay: 0.1s">
+            </div>
+            
             <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
                 Hébergement haute disponibilité et déploiement continu. 
                 Nous construisons le socle robuste qui permet à l'intelligence de s'exécuter en toute sécurité sur Hostinger.

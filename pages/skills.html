@@ -9,119 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --claw-red: #ff3e3e;
-      --claw-violet: #9d4edd;
-      --claw-orange: #ff9100;
-      --claw-yellow: #ffcc00;
-      --claw-noir: #000000;
-      --text: #e0e0e0;
-      --card-bg: rgba(255, 255, 255, 0.03);
-    }
-
-    body {
-      background-color: var(--claw-noir);
-      background: radial-gradient(circle at top right, #1a0b2e 0%, var(--claw-noir) 100%);
-      color: var(--text);
-      font-family: 'Space Mono', monospace;
-      overflow-x: hidden;
-    }
-
-    .font-syne { font-family: 'Syne', sans-serif; }
-
-    .glass {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .glass:hover {
-      border-color: var(--claw-red);
-      box-shadow: 0 0 30px rgba(157, 78, 221, 0.1);
-    }
-
-    .gradient-text {
-      background: linear-gradient(45deg, var(--claw-red), var(--claw-orange), var(--claw-yellow), var(--claw-violet));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .scanline {
-      width: 100%;
-      height: 2px;
-      background: rgba(255, 62, 62, 0.05);
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      pointer-events: none;
-      animation: scan 12s linear infinite;
-    }
-
-    @keyframes scan {
-      0% { top: -10%; }
-      100% { top: 110%; }
-    }
-
-    .blob {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(157, 78, 221, 0.05) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(80px);
-      z-index: -1;
-    }
-
-    .stagger-in {
-      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .logo-container img {
-      max-height: 80px;
-      width: auto;
-      filter: drop-shadow(0 0 10px rgba(255, 62, 62, 0.3));
-    }
-
-    .section-card { border-top: 3px solid var(--claw-orange); }
-
-    .flow-step {
-      position: relative;
-      padding-left: 2rem;
-      border-left: 1px solid var(--claw-violet);
-      padding-bottom: 2rem;
-    }
-
-    .flow-step::before {
-      content: '';
-      position: absolute;
-      left: -5px;
-      top: 0;
-      width: 10px;
-      height: 10px;
-      background: var(--claw-red);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--claw-red);
-    }
-
-    pre {
-      margin-top: .6rem;
-      overflow: auto;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      background: rgba(7, 12, 28, 0.9);
-      font-size: .82rem;
-      line-height: 1.45;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body class="p-4 md:p-12">
   <div class="scanline"></div>
@@ -129,15 +17,27 @@
   <div class="blob" style="bottom: -200px; left: -200px;"></div>
 
   <div id="app" class="max-w-6xl mx-auto">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center mb-12 stagger-in">
+      <div class="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="governance.html" class="nav-link">Gouvernance</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+      </div>
+      <div class="text-[10px] text-claw-orange font-bold border border-claw-orange/30 px-3 py-1 rounded">PÔLE SKILLS</div>
+    </nav>
+
     <header class="mb-20 stagger-in">
       <div class="flex items-center gap-4 mb-6">
         <div class="w-12 h-1 bg-red-500"></div>
-        <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Skills Dashboard</span>
+        <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Skills</span>
       </div>
 
       <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
-        INTELLIGENT CONNECTOR : <br />
-        <span class="gradient-text">Skills sur OpenClaw</span>
+        INTELLIGENT                 
+        <span class="gradient-text">CONNECTOR</span>
       </h1>
 
       <div class="logo-container mb-8">
@@ -228,7 +128,7 @@
     </section>
 
     <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay:0.65s">
-      <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">Investec Advisory • Platform Skills Unit • 2026</div>
+      <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">Investec Advisory • Skills Unit • 2026</div>
       <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
         <span class="text-gray-500">Status: Operational</span>
         <span class="text-gray-500">Scope: Multi-Agents</span>

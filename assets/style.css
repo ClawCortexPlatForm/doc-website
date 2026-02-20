@@ -10,6 +10,7 @@
     --claw-noir: #000000;
     --accent: var(--claw-violet);
 }
+
 body {
     background-color: var(--claw-noir);
     background: radial-gradient(circle at top right, #1a0b2e 0%, var(--claw-noir) 100%);
@@ -17,6 +18,7 @@ body {
     font-family: 'Space Mono', monospace;
     overflow-x: hidden;
 }
+
 .font-syne { font-family: 'Syne', sans-serif; }
 
 .glass {
@@ -25,6 +27,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
+
 .glass:hover {
     border-color: var(--claw-red);
     box-shadow: 0 0 30px rgba(157, 78, 221, 0.1);
@@ -98,12 +101,14 @@ body {
 }
 
 /* Workflow styles */
+
 .flow-step {
     position: relative;
     padding-left: 2rem;
     border-left: 1px solid var(--claw-violet);
     padding-bottom: 2rem;
 }
+
 .flow-step::before {
     content: '';
     position: absolute;
@@ -115,3 +120,15 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 10px var(--claw-red);
 }
+
+/* ===== Extracted from HTML pages ===== */
+
+/* --- agents.html --- */
+
+
+
+.nav-link:hover {
+            color: var(--claw-blue);
+            border-bottom: 1px solid var(--claw-blue);
+        }
+

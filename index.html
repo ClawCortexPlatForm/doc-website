@@ -1,10 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw Dashboard | Investec Advisory</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
+<body class="p-4 md:p-12">
+  <div class="scanline"></div>
+  <div class="blob" style="top: -200px; right: -200px;"></div>
+  <div class="blob" style="bottom: -200px; left: -200px;"></div>
 
+  <div id="app" class="max-w-6xl mx-auto">
+    <nav class="flex justify-between items-center mb-12 stagger-in">
+      <div class="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="pages/agents.html" class="nav-link">Agents</a>
+        <a href="pages/governance.html" class="nav-link">Gouvernance</a>
+        <a href="pages/skills.html" class="nav-link">Skills</a>
+        <a href="pages/infrastructure.html" class="nav-link">Infrastructure</a>
+      </div>
+      <div class="text-[10px] text-claw-orange font-bold border border-claw-orange/30 px-3 py-1 rounded">ACCUEIL</div>
+    </nav>
+
+    <header class="mb-20 stagger-in">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-1 bg-red-500"></div>
+        <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Investec Advisory Platform</span>
+      </div>
+
+      <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
+        OPENCLAW <br />
+        <span class="gradient-text">CONTROL CENTER</span>
+      </h1>
+
+      <p class="text-xl text-gray-400 max-w-3xl leading-relaxed">
+        Portail central pour piloter l’écosystème multi-agents : architecture, gouvernance, skills et infrastructure.
+      </p>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 stagger-in" style="animation-delay: 0.1s">
+      <a v-for="item in sections" :key="item.title" :href="item.href" class="glass p-8 rounded-2xl section-card block">
+        <div class="text-xs text-orange-300 font-bold mb-2 uppercase tracking-widest">{{ item.tag }}</div>
+        <h2 class="text-2xl font-syne font-bold mb-4 text-white">{{ item.title }}</h2>
+        <p class="text-gray-400 text-sm leading-relaxed">{{ item.desc }}</p>
+      </a>
+    </section>
+
+    <footer class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10 pb-20 stagger-in" style="animation-delay: 0.2s">
+      <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">
+        Investec Advisory • OpenClaw Docs • 2026
+      </div>
+      <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+        <span class="text-gray-500">Status: Operational</span>
+        <span class="text-gray-500">Mode: Multi-Agents</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          sections: [
+            {
+              tag: 'Pôle',
+              title: 'Agents',
+              href: 'pages/agents.html',
+              desc: 'Vue d’ensemble des agents déployés, de leurs rôles et de leur orchestration.'
+            },
+            {
+              tag: 'Pôle',
+              title: 'Gouvernance',
+              href: 'pages/governance.html',
+              desc: 'Zero Trust, RBAC, conformité et contrôles de sécurité de la plateforme.'
+            },
+            {
+              tag: 'Pôle',
+              title: 'Skills',
+              href: 'pages/skills.html',
+              desc: 'Catalogue des skills, déploiement, validation qualité et exploitation.'
+            },
+            {
+              tag: 'Pôle',
+              title: 'Infrastructure',
+              href: 'pages/infrastructure.html',
+              desc: 'Socle cloud, CI/CD, conteneurisation et monitoring opérationnel.'
+            }
+          ]
+        };
+      }
+    }).mount('#app');
+  </script>
 </body>
 </html>
