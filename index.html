@@ -118,7 +118,7 @@
         <div class="text-purple-400 text-xs font-mono tracking-tighter uppercase">{{ supervisor.role }}</div>
         <div class="flex gap-4 mt-2">
           <a :href="supervisor.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
-          <a :href="'mailto:' + supervisor.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+          <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
         </div>
       </div>
 
@@ -127,7 +127,7 @@
         <div class="text-gray-500 text-[10px] uppercase tracking-widest font-mono">Pôle : {{ person.pole }}</div>
         <div class="flex gap-4 mt-auto">
           <a :href="person.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
-          <a :href="'mailto:' + person.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+          <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
         </div>
       </div>
     </div>
@@ -178,14 +178,15 @@
         ],
         supervisor: {
           name: "Zakaria Khchiche",
-          role: "Superviseur",
-          email: "zkhchiche@hotmail.com",
+          role: "Tech Lead / Architecte",
+
           linkedin: "https://www.linkedin.com/in/zakariakhchiche/"
         },
+        email: "contact@firstdone.tech",
         // Liste des membres de l'équipe
         team: [
-          { name: "Fatma Bouzid", pole: "Monitoring & Docs", email: "f.bouzid@ecole-ipssi.net", linkedin: "#" },
-          { name: "Mohamed Abdelmalek Dorbani", pole: "Monitoring & Docs", email: "ma.dorbani@ecole-ipssi.net", linkedin: "#" },
+          { name: "Fatma Bouzid", pole: "Monitoring & Docs", linkedin: "#" },
+          { name: "Mohamed Abdelmalek Dorbani", pole: "Monitoring & Docs", linkedin: "#" },
           ]
       };
     },

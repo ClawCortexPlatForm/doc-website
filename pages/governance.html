@@ -229,7 +229,7 @@
                     <div class="text-purple-400 text-xs font-mono tracking-tighter uppercase">{{ supervisor.role }}</div>
                     <div class="flex gap-4 mt-2">
                         <a :href="supervisor.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
-                        <a :href="'mailto:' + supervisor.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+                        <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
                     </div>
                 </div>
                 <div v-for="person in team" :key="person.name" class="glass p-6 rounded-xl flex flex-col gap-3 border border-white/5 group">
@@ -237,7 +237,7 @@
                     <div class="text-gray-500 text-[10px] uppercase tracking-widest font-mono">Pôle : {{ person.pole }}</div>
                     <div class="flex gap-4 mt-auto">
                         <a :href="person.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
-                        <a :href="'mailto:' + person.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+                        <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
                     </div>
                 </div>
             </div>
@@ -358,12 +358,12 @@
                     },
                     supervisor: {
                         name: "Syphax ALILI",
-                        role: "Tech Lead",
-                        email: "s.alili@ecole-ipssi.net",
+                        role: "Lead Dev",
                         linkedin: "#"
                     },
+                    email: "contact@firstdone.tech",
                     team: [
-                      { name: "Seer Mensah-Assiakoley", pole: "Gouvernance", email: "seerharley03@gmail.com", linkedin: "https://www.linkedin.com/in/seer-mensah-assiakoley-542628198/" },
+                      { name: "Seer Mensah-Assiakoley", pole: "Gouvernance", linkedin: "https://www.linkedin.com/in/seer-mensah-assiakoley-542628198/" },
                     ]
                 }
             },
