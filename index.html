@@ -36,7 +36,7 @@
   <header class="mb-16 stagger-in">
     <div class="flex items-center gap-4 mb-6">
       <div class="w-12 h-1 bg-red-500"></div>
-      <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Système d'Intelligence Autonome</span>
+      <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Système d'Intelligence Autonome Openclaw</span>
     </div>
 
     <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
@@ -113,7 +113,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="glass p-6 rounded-xl border border-purple-500/30 flex flex-col gap-3 relative overflow-hidden">
-        <div class="absolute top-0 right-0 bg-purple-500 text-white text-[8px] px-2 py-1 font-bold uppercase">Superviseur</div>
+        <!--<div class="absolute top-0 right-0 bg-purple-500 text-white text-[8px] px-2 py-1 font-bold uppercase">Superviseur</div>-->
         <div class="text-white font-bold text-lg">{{ supervisor.name }}</div>
         <div class="text-purple-400 text-xs font-mono tracking-tighter uppercase">{{ supervisor.role }}</div>
         <div class="flex gap-4 mt-2">
@@ -178,17 +178,15 @@
         ],
         supervisor: {
           name: "Zakaria Khchiche",
-          role: "Orthophoniste de bases de données. Kinésithérapeute de pipelines,Médecin urgentiste de SQL, Python, Scala. Masseur de Spark",
+          role: "Superviseur",
           email: "zkhchiche@hotmail.com",
           linkedin: "https://www.linkedin.com/in/zakariakhchiche/"
         },
         // Liste des membres de l'équipe
-        // team: [
-        //   { name: "Nom Prénom 1", pole: "Agents & Intelligence", email: "contact1@exemple.com", linkedin: "#" },
-        //   { name: "Nom Prénom 2", pole: "Gouvernance & Sécurité", email: "contact2@exemple.com", linkedin: "#" },
-        //   { name: "Nom Prénom 3", pole: "Skills & Développement", email: "contact3@exemple.com", linkedin: "#" },
-        //   { name: "Nom Prénom 4", pole: "Infrastructure & Ops", email: "contact4@exemple.com", linkedin: "#" },
-        // ]
+        team: [
+          { name: "Fatma Bouzid", pole: "Monitoring & Docs", email: "f.bouzid@ecole-ipssi.net", linkedin: "#" },
+          { name: "Mohamed Abdelmalek Dorbani", pole: "Monitoring & Docs", email: "ma.dorbani@ecole-ipssi.net", linkedin: "#" },
+          ]
       };
     },
   }).mount("#app");

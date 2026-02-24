@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agents OpenClaw | Investec Advisory</title>
+    <title>Agents ClawCortex Platform | Écosystème IA Agentique</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,10 +47,7 @@
       <header class="mb-20 stagger-in">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-12 h-1 bg-red-500"></div>
-          <span
-            class="text-purple-400 uppercase tracking-widest text-sm font-bold"
-            >Investec Advisory Agent Intelligence</span
-          >
+          <span class="text-purple-400 uppercase tracking-widest text-sm font-bold">Système d'Intelligence Autonome Openclaw</span>
         </div>
 
         <h1 class="text-6xl md:text-8xl font-syne font-800 leading-tight mb-8">
@@ -183,30 +180,34 @@
             </div>
         </section>
 
+      <section class="mt-32 pt-10 border-t border-white/10 stagger-in" style="animation-delay: 0.2s">
+        <h2 class="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-12">Contributeurs & Crédits</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-xl border border-purple-500/30 flex flex-col gap-3 relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-purple-500 text-white text-[8px] px-2 py-1 font-bold uppercase">Superviseur</div>
+            <div class="text-white font-bold text-lg">{{ supervisor.name }}</div>
+            <div class="text-purple-400 text-xs font-mono tracking-tighter uppercase">{{ supervisor.role }}</div>
+            <div class="flex gap-4 mt-2">
+              <a :href="supervisor.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
+              <a :href="'mailto:' + supervisor.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+            </div>
+          </div>
+          <div v-for="person in team" :key="person.name" class="glass p-6 rounded-xl flex flex-col gap-3 border border-white/5 group">
+            <div class="text-white font-bold group-hover:text-claw-orange transition-colors">{{ person.name }}</div>
+            <div class="text-gray-500 text-[10px] uppercase tracking-widest font-mono">Pôle : {{ person.pole }}</div>
+            <div class="flex gap-4 mt-auto">
+              <a :href="person.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
+              <a :href="'mailto:' + person.email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
-      <footer
-        class="
-          flex flex-col
-          md:flex-row
-          justify-between
-          items-center
-          border-t border-white/10
-          pt-10
-          pb-20
-          stagger-in
-        "
-        style="animation-delay: 0.4s"
-      >
-        <div
-          class="
-            text-[10px] text-gray-600
-            mb-4
-            md:mb-0
-            uppercase
-            tracking-[0.2em]
-          "
-        >
-          Investec Advisory &bull; Agent Intelligence Unit &bull; 2026
+      <footer class="flex flex-col md:flex-row justify-between items-center pt-10 pb-20 stagger-in" style="animation-delay: 0.4s">
+        <div class="text-[10px] text-gray-600 mb-4 md:mb-0 uppercase tracking-[0.2em]">
+          OpenClaw Ecosystem • ClawCortexPlatform • 2026
         </div>
         <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
           <span class="text-gray-500">Node: v24.11.1</span>
@@ -274,6 +275,17 @@
                 ],
               },
             },
+            supervisor: {
+              name: "Syphax ALILI",
+              role: "Tech Lead",
+              email: "s.alili@ecole-ipssi.net",
+              linkedin: "#"
+            },
+
+            team: [
+              { name: "Evans KOUASSI", pole: "Agent", email: "e.kouassi@ecole-ipssi.net", linkedin: "#" },
+              { name: "Yoni DESERBAIX", pole: "Agent", email: "y.deserbaix@ecole-ipssi.net", linkedin: "#" },
+            ]
           };
         },
       }).mount("#app");
