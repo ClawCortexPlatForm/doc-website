@@ -121,6 +121,15 @@
           <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
         </div>
       </div>
+      <div class="glass p-6 rounded-xl border border-purple-500/30 flex flex-col gap-3 relative overflow-hidden">
+        <!--<div class="absolute top-0 right-0 bg-purple-500 text-white text-[8px] px-2 py-1 font-bold uppercase">Superviseur</div>-->
+        <div class="text-white font-bold text-lg">{{ lead.name }}</div>
+        <div class="text-purple-400 text-xs font-mono tracking-tighter uppercase">{{ lead.role }}</div>
+        <div class="flex gap-4 mt-2">
+          <a :href="lead.linkedin" class="text-blue-400 text-[10px] uppercase font-bold hover:underline">LinkedIn</a>
+          <a :href="'mailto:' + email" class="text-gray-400 text-[10px] uppercase font-bold hover:underline">Contact</a>
+        </div>
+      </div>
 
       <div v-for="person in team" :key="person.name" class="glass p-6 rounded-xl flex flex-col gap-3 border border-white/5 group">
         <div class="text-white font-bold group-hover:text-claw-orange transition-colors">{{ person.name }}</div>
@@ -179,13 +188,17 @@
         supervisor: {
           name: "Zakaria Khchiche",
           role: "Tech Lead / Architecte",
-
           linkedin: "https://www.linkedin.com/in/zakariakhchiche/"
+        },
+        lead: {
+          name: "Syphax ALILI",
+          role: "Lead Dev",
+          linkedin: "https://www.linkedin.com/in/syphaxalili/"
         },
         email: "contact@firstdone.tech",
         // Liste des membres de l'équipe
         team: [
-          { name: "Fatma Bouzid", pole: "Monitoring & Docs", linkedin: "#" },
+          { name: "Fatma Bouzid", pole: "Monitoring & Docs", linkedin: "https://www.linkedin.com/in/fatma-bouzid-/" },
           { name: "Mohamed Abdelmalek Dorbani", pole: "Monitoring & Docs", linkedin: "#" },
           ]
       };
